@@ -18,9 +18,9 @@ export default function Books() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">Published Books</h1>
+      <h1 className="text-4xl font-bold mb-4">Published <span className="text-yellow-500">Books</span></h1>
       <p className="text-lg mb-8">
-        Browse through the books I've published and where to purchase them.
+        Browse through the books I've published and you can also purchase them.
       </p>
 
       {books.map((book) => (

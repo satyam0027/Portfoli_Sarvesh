@@ -44,7 +44,7 @@ export default function Contact() {
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
       {/* Hero Section */}
       <section className="bg-gray-800 text-white py-20 text-center">
-        <h1 className="text-5xl font-bold mb-4">Get in Touch</h1>
+        <h1 className="text-5xl font-bold mb-4">Get in <span className="text-yellow-500"> Touch</span></h1>
         <p className="text-lg">
           Have questions? Collaborations? Or just want to say hi? Contact us today!
         </p>

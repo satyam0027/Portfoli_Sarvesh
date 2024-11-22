@@ -1,96 +1,116 @@
 export default function Podcast() {
   const sections = [
     {
-      id: "spirituality",
-      title: "Spirituality",
+      id: "cosmic-codes",
+      title: "Cosmic-codes",
       episodes: [
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Janhvi Kapoor",
+          youtubeLink: "https://youtu.be/xGMHhWE8ruI?si=OKS1yywFkc8etuW8",
+          guest: "Adarshh Panndey",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
+          youtubeLink: "https://youtu.be/K8_1z7BwiJc?si=YSYPEgzqzHHfe71w",
+          guest: "Shri O.P. Pathak ",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Priyanka Chopra",
+          youtubeLink: "https://youtu.be/ahBna4wQHrA?si=rbefRC-QSDJK1Lyf",
+          guest: "Dr. Rakesh Kathuria",
         },
       ],
     },
     {
-      id: "lifestyle",
-      title: "Lifestyle",
+      id: "Unlock Your Mind",
+      title: "Unlock Your Mind",
       episodes: [
         {
-          youtubeLink: "https://youtu.be/Mvr3QuojbYk?si=Ob53pswhJ5sxyUZK",
-          guest: "Sanjay Kathuria",
+          youtubeLink: "https://youtu.be/eooT59cETcw?si=hd-BvJSwyYPfXT8w",
+          guest: "Dr. Ram Verma",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/twtVUvY8vzE?si=BPhOP6GSocodrCiH",
+          guest: "Dr. Amiett kumar",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
-        },
-        {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/fjsJnluI-fc?si=Jhjf7EN8MV7og9Qs",
+          guest: "Dr. Ram Verma",
         },
       ],
     },
     {
-      id: "Armed-Forces",
-      title: "Armed-Forces",
+      id: "Medical",
+      title: "Medical",
       episodes: [
         {
           youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shilpa Shetty",
+          guest: "Dr. Anshuman Kumar",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/SeFWTQ6h1OE?si=NBMixxDyHmbgiDNG",
+          guest: " Dr. Ashish Jaiswal",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/l_-mWdS96Vg?si=TN2gNDXm9RqOftQn",
+          guest: " Dr. Neelu Agrawal",
+        },
+      ],
+    },
+    {
+      id: "Finance",
+      title: "Finance",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/Mvr3QuojbYk?si=OhgOkr2CxZpNI7Mu",
+          guest: " Sanjay Kathuria",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/kXd7pkj44c0?si=6_UcWQRqBBjYDYhe",
+          guest: "Deepak Wadhwa",
+        },
+      ],
+    },
+    {
+      id: "Inspirational",
+      title: "Inspirational",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/m1wHIlEAy-I?si=O4N1SsILH3oDjZ0L",
+          guest: "Sandeep Arya World Champion",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/TFcH8wn3LMg?si=nzF-Dg6768S5q3Ys",
+          guest: "Mahatmaji Technical",
         },
         {
-          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
-          guest: "Shahid Kapoor",
+          youtubeLink: "https://youtu.be/7eiC5GVUjZA?si=cI_rkcQJ_tdI2rBT",
+          guest: "Prof. Triveni Singh",
+        },
+        {
+          youtubeLink: "https://youtu.be/AGjKaJnYg_0?si=Mii0ekY0Wl3RPAr0",
+          guest: "Chandan Mishra",
+        },
+      ],
+    },
+    {
+      id: "Politics",
+      title: "Politics",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/T9eg5LMbR6A?si=0SIs55Rrmsk22zYh",
+          guest: "DP Yadav",
+        },
+      ],
+    },
+    {
+      id: "Yoga",
+      title: "Yoga",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/j_XKJNmOqoU?si=sYq6ImLnsfITgqzt",
+          guest: "Sohit Yogi ",
+        },
+        {
+          youtubeLink: "https://youtu.be/ZLnVYoa8gEg?si=VSIErTRWJXtPH5ZF",
+          guest: "Shri Manmohan Yogi",
         },
       ],
     },
@@ -129,7 +149,7 @@ export default function Podcast() {
       {sections.map((section) => (
         <div key={section.id} className="mb-12">
           {/* Section Title */}
-          <h2 className="text-2xl font-bold text-center text-white mb-6">
+          <h2 className="text-2xl font-bold text-center text-yellow-500 mb-6">
             {section.title}
           </h2>
           {/* Episodes */}

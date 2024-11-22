@@ -4,78 +4,82 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white mb-12">
         <img
-          src="/2020_04_30_18_00_IMG_8298.JPG" // Replace with your banner image
+          src="/DSC08454.JPG" // Replace with your banner image
           alt="About Banner"
           className="w-full h-[400px] object-cover"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center">
-          <h1 className="text-5xl font-bold mb-4">About Me</h1>
+          <h1 className="text-5xl font-bold mb-4">About <span className="text-yellow-500">Me</span> </h1>
           <p className="text-lg max-w-2xl">
-            A journey of passion, persistence, and purpose.
+            Empowering growth, clarity, and well-being with purpose-driven coaching.
           </p>
         </div>
       </div>
 
       {/* Introduction Section */}
       <div className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-3xl font-bold mb-6">Who I Am</h2>
-        <p className="text-lg text-gray-600 leading-relaxed">
-          Welcome to my world! I’m [Your Name], a [Your Profession/Title]. 
-          Over the years, I’ve dedicated my life to [your mission or purpose]. 
-          This space is where I share my thoughts, experiences, and resources to inspire, motivate, and create positive change in others.
+        <h2 className="text-3xl font-bold mb-6 text-yellow-500">Who I Am</h2>
+        <p className="text-lg text-white leading-relaxed">
+          I am Sarvesh Mishra, a coach who blends the art of self-branding, marketing clarity, and holistic wellness to inspire individuals to realize their fullest potential. With over 15 years of experience, I’ve dedicated my life to helping others unlock their true value, achieve personal and professional clarity, and lead lives of purpose and balance.
         </p>
       </div>
 
-      {/* Feature Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-        {/* Section 1 */}
-        <div>
-          <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-          <p className="text-gray-600 leading-relaxed">
-            From humble beginnings to where I am today, my story has been one of constant learning and growth. 
-            I believe in embracing challenges, seizing opportunities, and staying true to one’s purpose.
+      {/* Self-Branding Section */}
+      <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+        <div className="md:w-1/2">
+          <h3 className="text-2xl font-bold mb-4 text-yellow-500">Self-Branding</h3>
+          <p className="text-white leading-relaxed">
+            Your personal brand is your story, and I’m here to help you tell it with authenticity and impact. I work with clients to discover their unique value proposition, build confidence in their personal narrative, and create an identity that resonates with their audience. Whether you're an entrepreneur, professional, or creator, together we’ll craft a personal brand that aligns with your goals and reflects your authentic self.
           </p>
         </div>
-        <img
-          src="/FKYX5745.jpg" // Replace with your image
-          alt="Journey"
-          className="rounded-lg shadow-lg"
-        />
+        <div className="md:w-1/2">
+          <img
+            src="/branding_image.jpg" // Replace with your branding-related image
+            alt="Self-Branding"
+            className="rounded-lg shadow-lg mx-auto"
+          />
+        </div>
+      </div>
 
-        {/* Section 2 */}
-        <img
-          src="/FKYX5745.jpg" // Replace with your image
-          alt="Values"
-          className="rounded-lg shadow-lg"
-        />
-        <div>
-          <h3 className="text-2xl font-bold mb-4">My Values</h3>
-          <p className="text-gray-600 leading-relaxed">
-            Integrity, hard work, and compassion form the foundation of everything I do. 
-            These values guide my decisions and ensure I stay grounded and focused on creating value for others.
+      {/* Holistic Wellness Section */}
+      <div className="flex flex-col md:flex-row-reverse items-center gap-12 mb-16">
+        <div className="md:w-1/2">
+          <h3 className="text-2xl font-bold mb-4 text-yellow-500">Holistic Wellness Coaching</h3>
+          <p className="text-white leading-relaxed">
+            True success begins with a healthy mind and body. My holistic wellness coaching integrates mindfulness, physical health, and emotional resilience to help you achieve balance and well-being. I guide clients to develop habits and strategies that support a harmonious lifestyle, enabling them to perform at their best and live with purpose. Together, we address not just goals, but the journey to achieving them with vitality and joy.
           </p>
         </div>
+        <div className="md:w-1/2">
+          <img
+            src="/wellness_image.jpg" // Replace with your wellness-related image
+            alt="Holistic Wellness"
+            className="rounded-lg shadow-lg mx-auto"
+          />
+        </div>
+      </div>
 
-        {/* Section 3 */}
-        <div>
-          <h3 className="text-2xl font-bold mb-4">My Mission</h3>
-          <p className="text-gray-600 leading-relaxed">
-            My mission is to empower individuals through actionable knowledge and to 
-            build a community where growth and self-improvement are celebrated.
+      {/* Marketing Clarity Section */}
+      <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+        <div className="md:w-1/2">
+          <h3 className="text-2xl font-bold mb-4 text-yellow-500">Marketing Clarity Coaching</h3>
+          <p className="text-white leading-relaxed">
+            In a crowded marketplace, clarity is your competitive edge. I help individuals and businesses demystify marketing strategies, align their messaging with their target audience, and create campaigns that drive results. From developing content strategies to refining your communication style, I provide actionable guidance to position your brand for long-term success. Let’s cut through the noise and bring your vision to life with a clear and compelling approach.
           </p>
         </div>
-        <img
-          src="/FKYX5745.jpg" // Replace with your image
-          alt="Mission"
-          className="rounded-lg shadow-lg"
-        />
+        <div className="md:w-1/2">
+          <img
+            src="/marketing_image.jpg" // Replace with your marketing-related image
+            alt="Marketing Clarity"
+            className="rounded-lg shadow-lg mx-auto"
+          />
+        </div>
       </div>
 
       {/* Footer Call-to-Action */}
       <div className="bg-gray-900 text-white text-center py-12 rounded-lg">
-        <h2 className="text-3xl font-bold mb-4">Join Me on This Journey</h2>
+        <h2 className="text-3xl font-bold mb-4">Join Me <span className="text-yellow-500">on This Journey</span></h2>
         <p className="text-lg mb-6">
-          Let’s grow together. Follow me on my social platforms and stay connected for more insights and updates.
+          Ready to transform your life and achieve clarity in your goals? Connect with me to start your journey of growth and success.
         </p>
         <a
           href="/contact"
@@ -87,3 +91,4 @@ export default function About() {
     </div>
   );
 }
+
