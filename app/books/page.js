@@ -37,7 +37,7 @@ export default function Books() {
 
           {/* Book Details */}
           <div className="flex-1">
-            <h3 className="text-2xl font-semibold mb-2">{book.title}</h3>
+            <h3 className="text-2xl text-black font-semibold mb-2">{book.title}</h3>
             <p className="text-gray-600 mb-4">{book.description}</p>
             <a
               href={book.amazonLink}

@@ -4,7 +4,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white mb-12">
         <img
-          src="/about-banner.jpg" // Replace with your banner image
+          src="/2020_04_30_18_00_IMG_8298.JPG" // Replace with your banner image
           alt="About Banner"
           className="w-full h-[400px] object-cover"
         />
@@ -37,14 +37,14 @@ export default function About() {
           </p>
         </div>
         <img
-          src="/journey-image.jpg" // Replace with your image
+          src="/FKYX5745.jpg" // Replace with your image
           alt="Journey"
           className="rounded-lg shadow-lg"
         />
 
         {/* Section 2 */}
         <img
-          src="/values-image.jpg" // Replace with your image
+          src="/FKYX5745.jpg" // Replace with your image
           alt="Values"
           className="rounded-lg shadow-lg"
         />
@@ -65,7 +65,7 @@ export default function About() {
           </p>
         </div>
         <img
-          src="/mission-image.jpg" // Replace with your image
+          src="/FKYX5745.jpg" // Replace with your image
           alt="Mission"
           className="rounded-lg shadow-lg"
         />

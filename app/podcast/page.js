@@ -1,79 +1,167 @@
 export default function Podcast() {
-  const episodes = [
+  const sections = [
     {
-      id: 1,
-      title: "The Secrets of Success",
-      description: "In this episode, we explore the mindset and habits of highly successful individuals.",
-      thumbnail: "/podcast-episode-1.jpg", // Replace with your image path
-      spotifyLink: "https://spotify.com", // Replace with your Spotify link
-      appleLink: "https://apple.com", // Replace with your Apple Podcasts link
+      id: "spirituality",
+      title: "Spirituality",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Janhvi Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Priyanka Chopra",
+        },
+      ],
     },
     {
-      id: 2,
-      title: "Mastering Productivity",
-      description: "Tips and strategies to become more productive in your daily life.",
-      thumbnail: "/podcast-episode-2.jpg", // Replace with your image path
-      spotifyLink: "https://spotify.com",
-      appleLink: "https://apple.com",
+      id: "lifestyle",
+      title: "Lifestyle",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/Mvr3QuojbYk?si=Ob53pswhJ5sxyUZK",
+          guest: "Sanjay Kathuria",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+      ],
     },
-    // Add more episodes as needed
+    {
+      id: "Armed-Forces",
+      title: "Armed-Forces",
+      episodes: [
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shilpa Shetty",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+        {
+          youtubeLink: "https://youtu.be/9nYnZEuM3VY?si=eltKqgHliaY64JfJ",
+          guest: "Shahid Kapoor",
+        },
+      ],
+    },
   ];
 
+  const getVideoId = (url) => {
+    try {
+      const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/.*[?&]v=([^&#]*)/;
+      const match = url.match(regex);
+      if (match && match[1]) return match[1];
+
+      const shortRegex = /(?:https?:\/\/)?youtu\.be\/([^?&#]*)/;
+      const shortMatch = url.match(shortRegex);
+      if (shortMatch && shortMatch[1]) return shortMatch[1];
+
+      throw new Error("Invalid YouTube URL");
+    } catch (e) {
+      console.error("Error extracting video ID:", e.message);
+      return null;
+    }
+  };
+
+  const getThumbnailUrl = (youtubeLink) => {
+    const videoId = getVideoId(youtubeLink);
+    return videoId
+      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+      : "/placeholder-thumbnail.jpg";
+  };
+
   return (
-    <div className="container mx-auto p-4">
-      {/* Hero Section */}
-      <div className="relative bg-gray-100 rounded-lg overflow-hidden mb-8">
-        <img
-          src="/podcast-banner.jpg" // Replace with your banner image path
-          alt="Podcast Banner"
-          className="w-full h-60 object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">My Podcast</h1>
-        </div>
-      </div>
+    <div className="container mx-auto p-4" style={{ backgroundColor: "transparent" }}>
+      {/* Title */}
+      <h1 className="text-6xl font-bold text-center text-white mb-8">Podcasts</h1>
 
-      {/* Podcast Introduction */}
-      <div className="text-center mb-12">
-        <h2 className="text-2xl font-bold mb-4">Welcome to My Podcast</h2>
-        <p className="text-lg text-gray-600">
-          Discover engaging conversations, insightful discussions, and inspiring stories on my podcast. 
-          Tune in to learn, grow, and be entertained!
-        </p>
-      </div>
-
-      {/* Episodes Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {episodes.map((episode) => (
-          <div key={episode.id} className="bg-white rounded-lg shadow-md p-4 transition transform hover:scale-105">
-            <img
-              src={episode.thumbnail}
-              alt={episode.title}
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            <h3 className="text-xl font-semibold mb-2">{episode.title}</h3>
-            <p className="text-gray-600 mb-4">{episode.description}</p>
-            <div className="flex items-center gap-4">
+      {/* Sections */}
+      {sections.map((section) => (
+        <div key={section.id} className="mb-12">
+          {/* Section Title */}
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            {section.title}
+          </h2>
+          {/* Episodes */}
+          <div className="flex overflow-x-auto space-x-4 hide-scrollbar">
+            {section.episodes.map((episode, index) => (
               <a
-                href={episode.spotifyLink}
+                key={index}
+                href={episode.youtubeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
+                className="flex-none w-[320px] h-[200px] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform  border-2"
               >
-                Listen on Spotify
+                {/* Card Content */}
+                <div className="h-full flex flex-col justify-between">
+                  {/* Thumbnail */}
+                  <img
+                    src={getThumbnailUrl(episode.youtubeLink)}
+                    alt={`Thumbnail for ${episode.guest}`}
+                    className="w-full h-[150px] object-cover"
+                  />
+                  {/* Details */}
+                  <div className="flex flex-col items-center justify-center bg-gray-900 text-white py-2">
+                    <h3 className="text-sm font-bold">The Sarvesh Mishra Show</h3>
+                    <p className="text-xs">{episode.guest}</p>
+                  </div>
+                </div>
               </a>
-              <a
-                href={episode.appleLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 transition"
-              >
-                Listen on Apple
-              </a>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }
+
