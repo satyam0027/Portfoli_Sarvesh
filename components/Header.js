@@ -2,6 +2,7 @@
 
 import { useState, useContext, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ThemeContext } from './ThemeContext';
 import { Playfair_Display, Inter } from 'next/font/google';
 
@@ -47,10 +48,21 @@ const Header = () => {
         <nav className="container mx-auto flex flex-wrap justify-between items-center">
           <Link 
             href="/" 
-            className={`${playfair.className} text-2xl font-bold tracking-wide text-gray-800 hover:text-yellow-600 transition-colors duration-300`} 
+            className="flex items-center space-x-3" 
             onClick={closeMenu}
           >
-            Sarvesh Mishra
+            <div className="relative w-10 h-10">
+              <Image
+                src="/logo.png"
+                alt="Sarvesh Mishra Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className={`${playfair.className} text-2xl font-bold tracking-wide text-gray-800 hover:text-yellow-600 transition-colors duration-300`}>
+              Sarvesh Mishra
+            </span>
           </Link>
 
           <button onClick={toggleMenu} className="md:hidden text-black focus:outline-none">
