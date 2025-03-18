@@ -1,33 +1,26 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { blogPosts } from '@/data/blogPosts';
-import BlogCategories from '../components/BlogCategories';
+'use client';
 
-export const dynamic = 'force-static';
-
-export const metadata = {
-  title: 'Blog - Sarvesh Mishra',
-  description: 'Explore insightful articles on journalism, astrology, and more by Sarvesh Mishra.',
-  openGraph: {
-    title: 'Blog - Sarvesh Mishra',
-    description: 'Explore insightful articles on journalism, astrology, and more by Sarvesh Mishra.',
-    url: 'https://thesarveshmishra.com/blog',
-    siteName: 'Sarvesh Mishra',
-    locale: 'en_US',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://thesarveshmishra.com/blog'
-  }
-};
-
-const categories = [
-  "All",
-  ...new Set(blogPosts.map(post => post.category))
-];
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { blogPosts } from '../data/blogPosts';
+import BlogCategories from '../components/BlogCategories.jsx';
 
 export default function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [categories, setCategories] = useState(["All"]);
+
+  useEffect(() => {
+    if (blogPosts && blogPosts.length > 0) {
+      const uniqueCategories = ["All", ...new Set(blogPosts.map(post => post.category))];
+      setCategories(uniqueCategories);
+    }
+  }, []);
+
+  const filteredPosts = selectedCategory === "All"
+    ? blogPosts
+    : blogPosts.filter(post => post.category === selectedCategory);
+
   return (
     <main className="min-h-screen bg-gray-900 text-white py-20">
       <div className="container mx-auto px-4">
@@ -39,12 +32,12 @@ export default function BlogPage() {
 
       <BlogCategories 
         categories={categories} 
-        posts={blogPosts} 
+        onCategoryChange={setSelectedCategory}
       />
 
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {filteredPosts.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.id}`}
