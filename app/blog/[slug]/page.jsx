@@ -6,7 +6,6 @@ export const dynamic = 'force-static';
 
 // Helper function to extract video ID from YouTube URL
 function getYouTubeVideoId(url) {
-  if (!url) return null;
   const regex = /[?&]v=([^&]+)/;
   const match = url.match(regex);
   return match ? match[1] : null;
@@ -44,25 +43,19 @@ export function generateMetadata({ params }) {
 }
 
 export default function BlogPost({ params }) {
-  const post = blogPosts.find((post) => post.id === params.slug);
+  const { slug } = params;
+  const post = blogPosts.find((post) => post.id === slug);
 
   if (!post) {
-    return (
-      <div className="min-h-screen bg-gray-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-gray-400">The blog post you're looking for doesn't exist.</p>
-        </div>
-      </div>
-    );
+    return <div>Post not found</div>;
   }
 
   const videoId = post.youtubeUrl ? getYouTubeVideoId(post.youtubeUrl) : null;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
+    <div className="min-h-screen bg-transparent py-12">
       <article className="container mx-auto px-4 max-w-4xl">
-        <header className="mb-12 text-center">
+        <header className="mb-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-4">
             {post.title}
           </h1>
@@ -70,41 +63,18 @@ export default function BlogPost({ params }) {
             <span>{post.date}</span>
             <span>•</span>
             <span>{post.readTime}</span>
-            <span>•</span>
-            <span>{post.category}</span>
           </div>
         </header>
 
-        {post.image && (
-          <div className="relative w-full h-[400px] mb-12 rounded-lg overflow-hidden">
-            <Image
-              src={post.image}
-              alt={post.imageAlt || post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
-
-        <div className="prose prose-lg prose-invert max-w-none mb-12">
-          {post.content && (
-            <div 
-              className="content"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          )}
-          {!post.content && (
-            <p className="text-gray-400">
-              {post.excerpt}
-            </p>
-          )}
+        <div className="prose prose-lg prose-invert max-w-none">
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
 
+        {/* YouTube Video Section */}
         {videoId && (
           <div className="mt-16 pt-8 border-t border-gray-800">
             <h2 className="text-2xl font-bold text-yellow-500 mb-6">Watch the Video</h2>
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-800">
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title="YouTube video player"
@@ -125,6 +95,7 @@ export default function BlogPost({ params }) {
                   className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
@@ -133,12 +104,13 @@ export default function BlogPost({ params }) {
           </div>
         )}
 
+        {/* Author Section */}
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex items-center gap-4">
             <div className="relative w-16 h-16 rounded-full overflow-hidden">
               <Image
                 src="/author.jpg"
-                alt="Sarvesh Mishra"
+                alt="Author"
                 fill
                 className="object-cover"
               />
