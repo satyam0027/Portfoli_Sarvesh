@@ -88,7 +88,7 @@ export default function Home() {
             PR & Media Consultant
           </p>
           <p className="text-xl mt-2 font-bold">
-          "From No Name to Fame" – A journey of passion, creativity, and relentless storytelling.
+          &quot;From No Name to Fame&quot; – A journey of passion, creativity, and relentless storytelling.
           </p>
         </div>
       </section>
@@ -119,9 +119,9 @@ export default function Home() {
               Sarvesh Mishra is a dynamic self-branding coach, holistic wellness
               advocate, and marketing clarity expert. A media consultant,
               journalist, and author, Sarvesh has dedicated over 15 years to
-              inspiring individuals and businesses to thrive. "My mantra is
+              inspiring individuals and businesses to thrive. &quot;My mantra is
               simple: Empowering people to unlock their potential by combining
-              clarity, creativity, and balance." But how did this journey begin?
+              clarity, creativity, and balance.&quot; But how did this journey begin?
               From navigating the fast-paced world of investigative journalism
               to co-founding platforms like Red-Hot Media House and ES Digital
               World, Sarvesh has transformed challenges into stepping stones.

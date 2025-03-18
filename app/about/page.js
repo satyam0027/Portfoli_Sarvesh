@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-yellow-500">Professional Journey</h2>
               <p className="text-gray-300 mb-6">
-                With years of experience in PR and media consulting, I've dedicated my career to helping organizations and individuals build strong, authentic relationships with their audiences. My approach combines traditional PR principles with modern digital strategies to create impactful communication campaigns.
+                With years of experience in PR and media consulting, I&apos;ve dedicated my career to helping organizations and individuals build strong, authentic relationships with their audiences. My approach combines traditional PR principles with modern digital strategies to create impactful communication campaigns.
               </p>
               <p className="text-gray-300 mb-6">
                 As a consultant, I specialize in strategic communications, media relations, and brand development. My expertise extends across various industries, allowing me to provide tailored solutions that resonate with target audiences and achieve measurable results.

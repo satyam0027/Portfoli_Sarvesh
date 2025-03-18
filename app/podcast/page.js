@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Podcast() {
   const sections = [
     {
@@ -165,11 +167,12 @@ export default function Podcast() {
                 {/* Card Content */}
                 <div className="h-full flex flex-col justify-between">
                   {/* Thumbnail */}
-                  <img
+                  <Image src={getThumbnailUrl(episode.youtubeLink)} alt={`Thumbnail for ${episode.guest}`} className="w-full h-[150px] object-cover" />
+                  {/* <img
                     src={getThumbnailUrl(episode.youtubeLink)}
                     alt={`Thumbnail for ${episode.guest}`}
                     className="w-full h-[150px] object-cover"
-                  />
+                  /> */}
                   {/* Details */}
                   <div className="flex flex-col items-center justify-center bg-gray-900 text-white py-2">
                     <h3 className="text-sm font-bold">The Sarvesh Mishra Show</h3>
