@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from '@/data/blogPosts';
-import BlogCategories from '@/components/BlogCategories';
+import BlogCategories from '../components/BlogCategories';
 
 export const dynamic = 'force-static';
 
