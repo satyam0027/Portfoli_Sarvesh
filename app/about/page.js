@@ -63,15 +63,15 @@ export default function AboutPage() {
 
       <div className="min-h-screen bg-transparent text-white py-12">
         <div className="container mx-auto px-4">
-      {/* Hero Section */}
+          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-4">
               About Sarvesh Mishra
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               PR & Media Consultant specializing in strategic communications and authentic storytelling
-          </p>
-        </div>
+            </p>
+          </div>
 
           {/* Profile Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 className="object-cover rounded-lg"
                 priority
               />
-      </div>
+            </div>
             <div>
               <h2 className="text-3xl font-bold mb-6 text-yellow-500">Professional Journey</h2>
               <p className="text-gray-300 mb-6">
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-      </div>
+          </div>
 
           {/* Expertise Section */}
           <div className="mb-16">
@@ -149,10 +149,10 @@ export default function AboutPage() {
                 >
                   <h3 className="text-xl font-bold mb-3 text-yellow-500">{expertise.title}</h3>
                   <p className="text-gray-300">{expertise.description}</p>
-        </div>
+                </div>
               ))}
-        </div>
-      </div>
+            </div>
+          </div>
 
           {/* Awards Section */}
           <div className="text-center">
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </>

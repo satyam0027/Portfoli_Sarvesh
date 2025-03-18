@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export default function BlogCategories({ categories, posts }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -35,17 +33,16 @@ export default function BlogCategories({ categories, posts }) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {filteredPosts.map((post) => (
-          <Link
+          <a
             key={post.id}
             href={`/blog/${post.id}`}
             className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
           >
             <div className="relative h-48">
-              <Image
+              <img
                 src={post.image}
                 alt={post.imageAlt || post.title}
-                fill
-                className="object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
             <div className="p-6">
@@ -60,7 +57,7 @@ export default function BlogCategories({ categories, posts }) {
                 <span className="text-yellow-500">Read more →</span>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

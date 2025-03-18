@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { blogPosts } from '@/data/blogPosts';
-import BlogPostContent from '../../components/BlogPostContent';
 
 export const dynamic = 'force-static';
 
@@ -30,7 +29,7 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: `${post.title} - Sarvesh Mishra&apos;s Blog`,
+    title: `${post.title} - Sarvesh Mishra's Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -52,7 +51,7 @@ export default function BlogPost({ params }) {
       <div className="min-h-screen bg-gray-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-gray-400">The blog post you&apos;re looking for doesn&apos;t exist.</p>
+          <p className="text-gray-400">The blog post you're looking for doesn't exist.</p>
         </div>
       </div>
     );
@@ -64,10 +63,10 @@ export default function BlogPost({ params }) {
     <div className="min-h-screen bg-gray-900 text-white py-20">
       <article className="container mx-auto px-4 max-w-4xl">
         <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-4">
             {post.title}
           </h1>
-          <div className="flex flex-wrap justify-center items-center gap-4 text-gray-400 text-sm md:text-base">
+          <div className="flex justify-center items-center gap-4 text-gray-400">
             <span>{post.date}</span>
             <span>•</span>
             <span>{post.readTime}</span>
@@ -77,7 +76,7 @@ export default function BlogPost({ params }) {
         </header>
 
         {post.image && (
-          <div className="relative w-full h-[400px] md:h-[500px] mb-12 rounded-lg overflow-hidden">
+          <div className="relative w-full h-[400px] mb-12 rounded-lg overflow-hidden">
             <Image
               src={post.image}
               alt={post.imageAlt || post.title}
@@ -89,7 +88,17 @@ export default function BlogPost({ params }) {
         )}
 
         <div className="prose prose-lg prose-invert max-w-none mb-12">
-          <BlogPostContent content={post.content} />
+          {post.content && (
+            <div 
+              className="content"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          )}
+          {!post.content && (
+            <p className="text-gray-400">
+              {post.excerpt}
+            </p>
+          )}
         </div>
 
         {videoId && (
