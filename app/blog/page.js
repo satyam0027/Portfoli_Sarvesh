@@ -6,7 +6,9 @@ import Link from "next/link";
 import Head from "next/head";
 import Script from 'next/script';
 
-// Example blog posts data
+export const dynamic = 'force-static';
+
+// Blog posts data
 const blogPosts = [
   {
     id: "jyotish-shastra-qa",
@@ -148,7 +150,7 @@ export default function BlogPage() {
                 <div className="relative h-48 w-full">
                   <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={post.imageAlt || post.title}
                     fill
                     className="object-cover group-hover:opacity-80 transition-opacity duration-300"
                   />
