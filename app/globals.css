@@ -14,8 +14,6 @@
   --background-end-rgb: 0, 0, 0;
 }
 
-
-/* Add these styles for smooth transitions */
 body {
   background-color: black !important;
   color: white !important;
@@ -24,26 +22,17 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-body {
-  font-family: 'Inter', sans-serif;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --font-outfit: 'Outfit', sans-serif;
+/* Add these styles for smooth transitions */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-body {
-  font-family: var(--font-outfit);
-  
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-@layer utilities{
-  .no-scrollbar::-webkit-scrollbar{
-    display: none
-  }
-}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -57,14 +46,50 @@ body {
   display: flex;
   animation: marquee 20s linear infinite;
 }
-.no-scrollbar {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+
+/* Typography styles */
+.prose {
+  max-width: none;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+.prose h1 {
+  @apply text-4xl font-bold text-yellow-500 mb-6;
 }
+
+.prose h2 {
+  @apply text-2xl font-bold text-yellow-500 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-yellow-500 mb-3;
+}
+
+.prose p {
+  @apply text-gray-300 mb-4;
+}
+
+.prose a {
+  @apply text-yellow-500 hover:text-yellow-400 transition-colors;
+}
+
+.prose strong {
+  @apply text-yellow-500;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-yellow-500 pl-4 italic text-gray-300;
+}
+
+.prose code {
+  @apply text-yellow-500 bg-gray-800 px-2 py-1 rounded;
+}
+
+@layer utilities{
+  .no-scrollbar::-webkit-scrollbar{
+    display: none
+  }
+}
+
 .hide-scrollbar {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
