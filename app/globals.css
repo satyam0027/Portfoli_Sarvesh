@@ -1,3 +1,53 @@
+/* Modern serif fonts */
+@font-face {
+  font-family: 'Domine';
+  src: url('/Domine,Poppins/Domine/Domine-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/Domine,Poppins/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/Domine,Poppins/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/Domine,Poppins/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/Domine,Poppins/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Temporary utility classes for easy reverting */
+.temp-serif-font {
+  font-family: 'Domine', serif;
+}
+
+.temp-sans-font {
+  font-family: 'Poppins', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

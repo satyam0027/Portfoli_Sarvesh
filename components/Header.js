@@ -3,9 +3,9 @@
 import { useState, useContext, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ThemeContext } from './ThemeContext';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const playfair = Playfair_Display({ subsets: ['latin'] });
+// Using Inter only for fallback
 const inter = Inter({ subsets: ['latin'] });
 
 const Header = () => {
@@ -44,14 +44,14 @@ const Header = () => {
   return (
     <section className="pb-10">
       <header className="bg-white fixed top-0 w-full z-50 text-black p-4 shadow-md">
-        <nav className="container mx-auto flex flex-wrap justify-between items-center">
-          <Link 
+        <nav className="container mx-auto flex flex-wrap justify-center items-center">
+          {/* <Link 
             href="/" 
-            className={`${playfair.className} text-2xl font-bold tracking-wide text-gray-800 hover:text-yellow-600 transition-colors duration-300`} 
+            className="temp-serif-font text-2xl font-bold tracking-wide text-gray-800 hover:text-yellow-600 transition-colors duration-300" 
             onClick={closeMenu}
           >
             Sarvesh Mishra
-          </Link>
+          </Link> */}
 
           <button onClick={toggleMenu} className="md:hidden text-black focus:outline-none">
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ const Header = () => {
           </button>
 
           <ul
-            className={`${inter.className} w-full md:w-auto md:flex items-center space-y-2 md:space-y-0 md:space-x-6 ${
+            className={`temp-sans-font w-full md:w-auto md:flex items-center space-y-2 md:space-y-0 md:space-x-6 ${
               isMenuOpen ? 'block' : 'hidden'
             } mt-4 md:mt-0`}
           >

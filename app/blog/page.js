@@ -145,7 +145,7 @@ export default function BlogPage() {
                 key={post.id}
                 className="group bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
               >
-                <div className="relative h-48 w-full">
+                <div className="relative h-56 w-full">
                   <Image
                     src={post.image}
                     alt={post.title}
