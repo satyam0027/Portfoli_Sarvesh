@@ -1,11 +1,8 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { ThemeProvider } from '../components/ThemeContext'
 import Script from 'next/script'
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const viewport = {
   width: 'device-width',
@@ -78,11 +75,13 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.png', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512x512.png', type: 'image/png', sizes: '512x512' },
     ],
+    shortcut: ['/favicon.ico'],
     apple: [
-      { url: '/logo.png', type: 'image/png' }
+      { url: '/icon-192x192.png', type: 'image/png', sizes: '192x192' },
     ],
     other: [
       {
@@ -96,9 +95,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className="sf-pro-regular">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords.join(', ')} />
         <meta name="author" content={metadata.authors[0].name} />

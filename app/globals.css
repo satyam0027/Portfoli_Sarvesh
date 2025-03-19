@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/font/sf-pro-display/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/font/sf-pro-display/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/font/sf-pro-display/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/font/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/font/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +46,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --font-sf-pro: 'SF Pro Display', system-ui, sans-serif;
 }
 
 .dark {
@@ -14,23 +55,19 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+/* Remove previous font imports and declarations */
 body {
   background-color: black !important;
   color: white !important;
-  font-family: var(--font-outfit, 'Outfit', sans-serif);
+  font-family: var(--font-sf-pro);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-/* Add these styles for smooth transitions */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Remove the duplicate tailwind directives and old font imports */
+@layer utilities{
+  .no-scrollbar::-webkit-scrollbar{
+    display: none
+  }
 }
 
 @keyframes marquee {
@@ -96,5 +133,21 @@ body {
 }
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* SF Pro Display font utility classes */
+.sf-pro-regular {
+  font-family: 'SF Pro Display';
+  font-weight: 400;
+}
+
+.sf-pro-medium {
+  font-family: 'SF Pro Display';
+  font-weight: 500;
+}
+
+.sf-pro-bold {
+  font-family: 'SF Pro Display';
+  font-weight: 700;
 }
 

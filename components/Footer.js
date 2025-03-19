@@ -1,19 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { Playfair_Display, Inter } from 'next/font/google'
-
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const inter = Inter({ subsets: ['latin'] })
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={`${inter.className} bg-gray-100 text-gray-800 py-12 border-t border-gray-200`}>
+    <footer className="sf-pro-regular bg-gray-100 text-gray-800 py-12 border-t border-gray-200">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
         <div>
-          <h3 className={`${playfair.className} text-2xl font-bold mb-6 text-gray-900`}>Our Business</h3>
+          <h3 className="sf-pro-bold text-2xl mb-6 text-gray-900">Our Business</h3>
           <ul className="space-y-4">
             <li>
               <a 
@@ -38,7 +34,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h3 className={`${playfair.className} text-2xl font-bold mb-6 text-gray-900`}>YouTube Channels</h3>
+          <h3 className="sf-pro-bold text-2xl mb-6 text-gray-900">YouTube Channels</h3>
           <ul className="space-y-4">
             <li>
               <a 
@@ -83,7 +79,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h3 className={`${playfair.className} text-2xl font-bold mb-6 text-gray-900`}>Follow Us</h3>
+          <h3 className="sf-pro-bold text-2xl mb-6 text-gray-900">Follow Us</h3>
           <div className="flex space-x-6">
             <a 
               href="https://www.youtube.com/@Sarveshmishrashow" 

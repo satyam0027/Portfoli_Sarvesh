@@ -15,9 +15,9 @@ export default function AboutPage() {
         <meta property="og:title" content="About Sarvesh Mishra | PR & Media Consultant in India" />
         <meta property="og:description" content="Learn about Sarvesh Mishra, an expert PR & Media Consultant in India. Discover his journey, expertise in strategic communications, and commitment to authentic storytelling." />
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://sarveshmishra.com/about" />
-        <meta property="og:image" content="https://sarveshmishra.com/author.jpg" />
-        <link rel="canonical" href="https://sarveshmishra.com/about" />
+        <meta property="og:url" content="https://thesarveshmishra.com/about" />
+        <meta property="og:image" content="https://thesarveshmishra.com/author.jpg" />
+        <link rel="canonical" href="https://thesarveshmishra.com/about" />
         <meta name="author" content="Sarvesh Mishra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
       </Head>
@@ -31,13 +31,13 @@ export default function AboutPage() {
             "@type": "ProfilePage",
             "name": "About Sarvesh Mishra",
             "description": "Professional profile of Sarvesh Mishra, PR & Media Consultant",
-            "url": "https://sarveshmishra.com/about",
+            "url": "https://thesarveshmishra.com/about",
             "mainEntity": {
               "@type": "Person",
               "name": "Sarvesh Mishra",
               "jobTitle": "PR & Media Consultant",
               "description": "Expert in strategic communications, media relations, and brand development",
-              "image": "https://sarveshmishra.com/author.jpg",
+              "image": "https://thesarveshmishra.com/author.jpg",
               "sameAs": [
                 "https://www.linkedin.com/in/sarveshmishra",
                 "https://twitter.com/sarveshmishra",

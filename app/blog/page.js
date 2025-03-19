@@ -1,10 +1,55 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { blogPosts } from '../data/blogPosts';
-import BlogCategories from '../components/BlogCategories.jsx';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
+import Script from 'next/script';
+
+// Example blog posts data
+const blogPosts = [
+  {
+    id: "jyotish-shastra-qa",
+    title: "JYOTISH SHASTRA (ASTROLOGY) Q&A",
+    excerpt: "ज्योतिष विज्ञान नहीं, ईश्वर का वरदान है। Explore the divine connection between astrology and spirituality through this in-depth Q&A session about Jyotish Shastra.",
+    image: "/blog/jyotish-thumb.jpg",
+    category: "Astrology",
+    readTime: "15 min read",
+    date: "March 7, 2024",
+    youtubeUrl: "https://youtu.be/K8_1z7BwiJc?si=4ynyg3ZnCIKclJqv",
+    featured: true,
+    imageAlt: "Jyotish Shastra Q&A Session - UNCUT Interview about Vedic Astrology"
+  },
+  {
+    id: "rajiv-ranjan-journalism",
+    title: "RAJIV RANJAN: JOURNALISM & REALITY Q&A",
+    excerpt: "An in-depth look at Rajiv Ranjan's unique approach to journalism, his ground-level reporting style, and his commitment to authentic storytelling that reflects the voices of the people.",
+    image: "/blog/journalism.jpg",
+    category: "Journalism",
+    readTime: "12 min read",
+    date: "March 6, 2024",
+    youtubeUrl: "https://youtu.be/52YgALPo_SU?si=goFr-MOJRk-l05qx"
+  },
+  {
+    id: "sohit-yogi-yoga-qa",
+    title: "SOHIT YOGI: YOGA TRANSFORMATION Q&A",
+    excerpt: "Discover why yoga is considered the most effective exercise for holistic well-being. Learn how yoga aligns mind, body, and spirit to address lifestyle diseases and improve overall health.",
+    image: "/blog/yoga-thumb.jpg",
+    category: "Yoga",
+    readTime: "18 min read",
+    date: "March 15, 2024",
+    youtubeUrl: "https://youtu.be/j_XKJNmOqoU?si=rp8Owzvz1g0keL6V",
+    featured: true,
+    imageAlt: "Sohit Yogi explains the transformative power of yoga and its health benefits"
+  }
+];
+
+const categories = [
+  "All",
+  "Astrology",
+  "Journalism",
+  "Yoga"
+];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -22,13 +67,76 @@ export default function BlogPage() {
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-gray-900 text-white py-20">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">Blog</h1>
-        <p className="text-lg text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          Explore my thoughts and insights on journalism, astrology, and more.
-        </p>
-      </div>
+    <>
+      <Head>
+        <title>Sarvesh Mishra's Blog | Expert Insights on PR, Media, and Astrology</title>
+        <meta name="description" content="Explore expert insights from Sarvesh Mishra on PR, media relations, astrology, and journalism. In-depth analysis and Q&A sessions with industry leaders." />
+        <meta name="keywords" content="Sarvesh Mishra blog, PR consultant blog, media relations, astrology insights, journalism analysis, Sarvesh Mishra articles, PR expert blog, media consultant India" />
+        <meta property="og:title" content="Sarvesh Mishra's Blog | Expert Insights on PR, Media, and Astrology" />
+        <meta property="og:description" content="Explore expert insights from Sarvesh Mishra on PR, media relations, astrology, and journalism. In-depth analysis and Q&A sessions with industry leaders." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://thesarveshmishra.com/blog" />
+        <meta property="og:image" content="https://thesarveshmishra.com/blog-og.jpg" />
+        <link rel="canonical" href="https://thesarveshmishra.com/blog" />
+        <meta name="author" content="Sarvesh Mishra" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+      </Head>
+
+      <Script
+        id="blog-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Sarvesh Mishra's Blog",
+            "description": "Expert insights on PR, media relations, astrology, and journalism",
+            "url": "https://thesarveshmishra.com/blog",
+            "author": {
+              "@type": "Person",
+              "name": "Sarvesh Mishra"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Sarvesh Mishra Consulting",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thesarveshmishra.com/logo.png"
+              }
+            },
+            "blogPost": blogPosts.map(post => ({
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": post.excerpt,
+              "image": `https://thesarveshmishra.com${post.image}`,
+              "datePublished": post.date,
+              "author": {
+                "@type": "Person",
+                "name": "Sarvesh Mishra"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Sarvesh Mishra Consulting",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://thesarveshmishra.com/logo.png"
+                }
+              }
+            }))
+          })
+        }}
+      />
+
+      <div className="min-h-screen bg-transparent text-white py-12">
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-yellow-500 mb-4">
+            Blog
+          </h1>
+          <p className="text-xl text-gray-300 text-center max-w-2xl mx-auto">
+            Insights, strategies, and stories to help you grow personally and professionally.
+          </p>
+        </div>
 
       <BlogCategories 
         categories={categories} 
